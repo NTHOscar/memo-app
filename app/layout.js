@@ -11,6 +11,9 @@ export default function RootLayout({ children }) {
           <Link href="/notes">
               Notes
           </Link>
+          <Link href="/chatbot">
+              Chatbot
+          </Link>
         </nav>
         {children}
       </body>
