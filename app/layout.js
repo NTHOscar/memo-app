@@ -11,6 +11,9 @@ export default function RootLayout({ children }) {
           <Link href="/notes">
               Notes
           </Link>
+          <Link href="/todo">
+              To-Do list
+          </Link>
           <Link href="/chatbot">
               Chatbot
           </Link>
