@@ -23,6 +23,7 @@ export default async function TODOList() {
                     <div className={styles.itemElement}>Title</div>
                     <div className={styles.itemElement}>Date</div>
                     <div className={styles.itemElement}>Completed?</div>
+                    <div className={styles.itemElement}></div>
                 </div>
                 {todoList?.map((item) => {
                 return <TODO key={item.id} item={item} />;
@@ -41,6 +42,11 @@ function TODO({ item }) {
           <div className={styles.itemElement}>{title}</div>
           <div className={styles.itemElement}>{date}</div>
           <div className={styles.itemElement}>{completed?"Yes":"No"}</div>
+          <div className={styles.itemElement}>
+            <button>
+                Delete
+            </button>
+          </div>
         </div>
     );
   }
