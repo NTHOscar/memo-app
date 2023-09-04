@@ -17,8 +17,13 @@ export default async function TODOList() {
         <div>
             <h1>To-Do List</h1>
             <CreateTODO />
-            list:
-            <div className={styles.itemList}>
+            <br />
+            <div className={styles.itemListContainer}>
+                <div className={styles.itemListHeader}>
+                    <div className={styles.itemElement}>Title</div>
+                    <div className={styles.itemElement}>Date</div>
+                    <div className={styles.itemElement}>Completed?</div>
+                </div>
                 {todoList?.map((item) => {
                 return <TODO key={item.id} item={item} />;
                 })}
@@ -32,10 +37,10 @@ function TODO({ item }) {
   
     return (
 
-        <>
-          <div>{title}</div>
-          <div>{date}</div>
-          <div>{completed?"true":"false"}</div>
-        </>
+        <div className={styles.itemRow}>
+          <div className={styles.itemElement}>{title}</div>
+          <div className={styles.itemElement}>{date}</div>
+          <div className={styles.itemElement}>{completed?"Yes":"No"}</div>
+        </div>
     );
   }
