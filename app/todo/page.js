@@ -1,5 +1,6 @@
 import CreateTODO from './CreateTODO';
 import styles from './TODO.module.css';
+import TODO from './TODO';
 
 async function getTODOList() {
     // const db = new PocketBase('http://127.0.0.1:8090');
@@ -13,6 +14,21 @@ async function getTODOList() {
         console.log(err);
     }
   }
+
+//   const deleteRecord = async (id) => {
+//     try {
+//       const response = await fetch(`http://127.0.0.1:8090/api/collections/todo/record/${id}`, {
+//         method: 'DELETE',
+//       });
+  
+//       if (!response.ok) {
+//         throw new Error('Delete request failed');
+//       }
+      
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
 
 export default async function TODOList() {
     const todoList = await getTODOList();
@@ -37,20 +53,20 @@ export default async function TODOList() {
     );
 }
 
-function TODO({ item }) {
-    const { id, title, date, completed } = item;
+// function TODO({ item }) {
+//     const { id, title, date, completed } = item;
   
-    return (
+//     return (
 
-        <div className={styles.itemRow}>
-          <div className={styles.itemElement}>{title}</div>
-          <div className={styles.itemElement}>{date}</div>
-          <div className={styles.itemElement}>{completed?"Yes":"No"}</div>
-          <div className={styles.itemElement}>
-            <button>
-                Delete
-            </button>
-          </div>
-        </div>
-    );
-  }
+//         <div className={styles.itemRow}>
+//           <div className={styles.itemElement}>{title}</div>
+//           <div className={styles.itemElement}>{date}</div>
+//           <div className={styles.itemElement}>{completed?"Yes":"No"}</div>
+//           <div className={styles.itemElement}>
+//             <button onClick={deleteRecord(item.id)}>
+//                 Delete
+//             </button>
+//           </div>
+//         </div>
+//     );
+//   }

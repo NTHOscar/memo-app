@@ -50,7 +50,7 @@ export default function CreateTODO() {
         setTitle('');
         setCompleted(false);
         router.refresh();
-      }
+    }
 
     return(
         <div>
