@@ -11,7 +11,7 @@ async function getTODOList() {
         // console.log(data);
         return data?.items;
     } catch(err){
-        console.log(err);
+        console.log("Fetch failed!");
     }
   }
 
