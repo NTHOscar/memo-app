@@ -42,6 +42,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
-## Potential warning
-- app-index.js:31 Warning: Extra attributes from the server: data-new-gr-c-s-check-loaded,data-gr-ext-installed: caused by chrome extension like Grammarly(gr)
-- todo:1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received: Chrome extension that causes cross-origin request issues. Try to open Chrome in Incognito Mode.
+## Potential warnings
+- Warning: Extra attributes from the server: data-new-gr-c-s-check-loaded,data-gr-ext-installed: caused by chrome extension like Grammarly(gr)
+- Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received: Chrome extension that causes cross-origin request issues. Try to open Chrome in Incognito Mode.
