@@ -8,6 +8,7 @@ export default function TODO({ item }) {
     const { id, title, date, completed } = item;
     console.log(id);
     const router = useRouter();
+    // onclick will not reload whole page by default
     const deleteRecord = async (id) => {
         try {
             const response = await fetch(`http://127.0.0.1:8090/api/collections/todo/records/${id}`, {

@@ -9,7 +9,9 @@ export default function CreateTODO() {
     const [completed, setCompleted] = useState(false);
   
     const router = useRouter();
-    const create = async() => {
+    const create = async(event) => {
+        event.preventDefault(); //prevent page refresh since it is onSubmit
+
         // Check if date is in the format "DD/MM"
         const dateRegex = /^(0?[1-9]|[1-2][0-9]|3[01])\/(0?[1-9]|1[0-2])$/;
         if (!dateRegex.test(date)) {

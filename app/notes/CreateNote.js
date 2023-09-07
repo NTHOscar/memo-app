@@ -17,7 +17,9 @@ export default function CreateNote() {
 
   const router = useRouter();
 
-  const create = async() => {
+  const create = async(event) => {
+    event.preventDefault(); //prevent page refresh since it is onSubmit
+
     // const db = new PocketBase('http://127.0.0.1:8090');
 
     // await db.records.create('notes', {
