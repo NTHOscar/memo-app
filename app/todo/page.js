@@ -42,7 +42,7 @@ export default async function TODOList() {
                 <div className={styles.itemListHeader}>
                     <div className={styles.itemElement}>Title</div>
                     <div className={styles.itemElement}>Deadline</div>
-                    <div className={styles.itemElement}>Completed?</div>
+                    <div className={styles.itemElement}>Completed</div>
                     <div className={styles.itemElement}></div>
                 </div>
                 {todoList?.map((item) => {
