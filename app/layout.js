@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
               Chatbot
           </Link>
         </nav>
-        {children}
+        <div className="container">
+          {children}
+        </div>
       </body>
     </html>
   )
