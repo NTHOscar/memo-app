@@ -25,16 +25,20 @@ export default function CreateNote() {
     //   content,
     // });
     //also use fetch to create a Post request
-    await fetch('http://127.0.0.1:8090/api/collections/notes/records', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        title,
-        content,
-      }),
-    });
+    try {
+      await fetch('http://127.0.0.1:8090/api/collections/notes/records', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title,
+          content,
+        }),
+      });
+    } catch(e) {
+      console.log("Create Note Failed!: " + e)
+    }
 
     setContent('');
     setTitle('');
