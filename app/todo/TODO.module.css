@@ -33,3 +33,13 @@
 .itemElement:nth-child(3){
   flex-grow: 1;
 }
+.greenButton {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+}
+.redButton {
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+}
