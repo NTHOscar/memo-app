@@ -4,6 +4,7 @@ import { useState} from 'react'
 export default function Chatbot() {
     const [userInput, setUserInput] = useState('');
     const [loading, setLoading] = useState(false);
+    const [response, setResponse] = useState('response from ai!');
     const handleSubmit = (event) => {
       event.preventDefault();
       // Perform actions with user input (e.g., send it to a chat API)
@@ -18,6 +19,7 @@ export default function Chatbot() {
             <div className="chatContainer">
                 <div className="chat">
                     {/* text in e.g chat history */}
+                    {response}
                     {userInput}
                 </div>
                 <form onSubmit={handleSubmit}>
@@ -26,7 +28,7 @@ export default function Chatbot() {
                         // onKeyDown={handleEnter}
                         // ref={textAreaRef}
                         autoFocus={false}
-                        rows={1}
+                        rows={2}
                         maxLength={512}
                         id="userInput" 
                         name="userInput" 
