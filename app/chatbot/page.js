@@ -4,12 +4,35 @@ import { useState} from 'react'
 export default function Chatbot() {
     const [userInput, setUserInput] = useState('');
     const [loading, setLoading] = useState(false);
-    const [response, setResponse] = useState('response from ai!');
-    const handleSubmit = (event) => {
+    const [response, setResponse] = useState('response from AI!');
+    const handleSubmit = async(event) => {
       event.preventDefault();
-      // Perform actions with user input (e.g., send it to a chat API)
+      if(userInput.trim() === '') {
+        return;
+      }
       console.log('User input:', userInput);
-      // Reset the user input field
+      setLoading(true);
+      
+      try {
+        const res = await fetch("api/langchain", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+            prompt: userInput,
+            })
+        });
+        const AIResponse = await res.json();
+        console.log(AIResponse);
+        setResponse(AIResponse);
+        // Reset user input field
+        setUserInput('');
+      } catch (error) {
+        console.log('Error occurred when sending input to AI', error);
+        window.alert('Error occurred when sending input to AI', error);
+      }
+      setLoading(false);
       setUserInput('');
     };
 
