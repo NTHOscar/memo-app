@@ -25,7 +25,8 @@ export default function Chatbot() {
         });
         const AIResponse = await res.json();
         console.log(AIResponse);
-        setResponse(AIResponse);
+        console.log(AIResponse.API);
+        setResponse(AIResponse.API);
         // Reset user input field
         setUserInput('');
       } catch (error) {
