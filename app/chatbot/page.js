@@ -26,7 +26,8 @@ export default function Chatbot() {
         const AIResponse = await res.json();
         console.log(AIResponse);
         console.log(AIResponse.API);
-        setResponse(AIResponse.API);
+        console.log(AIResponse.result);
+        setResponse(AIResponse.result);
         // Reset user input field
         setUserInput('');
       } catch (error) {
@@ -44,7 +45,7 @@ export default function Chatbot() {
                 <div className="chat">
                     {/* text in e.g chat history */}
                     {response}
-                    {userInput}
+                    {/* {userInput} */}
                 </div>
                 <form onSubmit={handleSubmit}>
                     <textarea 
