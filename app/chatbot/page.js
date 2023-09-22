@@ -1,5 +1,6 @@
 'use client'
 import { useState} from 'react'
+import styles from './Chat.module.css'
 
 export default function Chatbot() {
     const [userInput, setUserInput] = useState('');
@@ -42,7 +43,7 @@ export default function Chatbot() {
         <div>
             <h1>This is a chatbot</h1>
             <div className="chatContainer">
-                <div className="chat">
+                <div className={styles.chat}>
                     {/* text in e.g chat history */}
                     {response}
                     {/* {userInput} */}
