@@ -66,7 +66,7 @@ export default function Chatbot() {
                     <button 
                         type="submit" 
                         disabled = {loading}
-                        // className = {styles.generatebutton}
+                        className = "bg-black"
                     >
                         Enter
                     </button>
