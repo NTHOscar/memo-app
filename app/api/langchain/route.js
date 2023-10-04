@@ -27,7 +27,7 @@ const runRetrievalAgent = async (propmt) => {
         chunkOverlap: 20
     });
     const docs = await textSplitter.splitDocuments([data]);
-    console.log(docs)
+    // console.log(docs)
     const vectorStore = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings({openAIApiKey: APIKey}));
     const retriever = vectorStore.asRetriever();
 
@@ -58,7 +58,7 @@ const runRetrievalAgent = async (propmt) => {
         },
     });
     const result = await executor.call({
-        input: "According to the document, what do Oscar describe about tom?"
+        input: propmt
     });
     console.log(result["output"]);
     return result["output"];
